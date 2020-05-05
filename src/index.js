@@ -5,9 +5,6 @@ import { resolvers } from './resolvers';
 import { typeDefs } from './typeDefs';
 const app = express();
 
-
-
-
 const startServer = async () => {
 
     const server = new ApolloServer({

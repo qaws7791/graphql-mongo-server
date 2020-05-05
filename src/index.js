@@ -6,6 +6,7 @@ import { typeDefs } from './typeDefs';
 const app = express();
 
 const startServer = async () => {
+    const port = process.env.PORT || 4000;
 
     const server = new ApolloServer({
         typeDefs,
@@ -16,7 +17,7 @@ const startServer = async () => {
       
     await mongoose.connect('mongodb://localhost:27017/test3', {useNewUrlParser: true, useUnifiedTopology: true});
     
-    app.listen({ port: 4000 }, () =>
+    app.listen({ port }, () =>
         console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
     );
       
